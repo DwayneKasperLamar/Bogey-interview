@@ -15,7 +15,7 @@ const page = () => {
                 <p className='text-lg'></p>
 
                 <Button asChild className='btn-primary max-sm:w-full'>
-                    <Link href="/interview">Start Interview Practise</Link>
+                    <Link href="/interview"> Start Interview Practise</Link>
                 </Button>
             </div>
             <Image src='/robot.png' 
