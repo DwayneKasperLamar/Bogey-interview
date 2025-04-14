@@ -1,28 +1,29 @@
 import { initializeApp,  getApps, cert } from "firebase-admin/app"
 import {getAuth} from "firebase-admin/auth"
 import {getFirestore} from "firebase-admin/firestore"
-import  bogey from "@/firebase/bogey.json"
+// import  bogey from "@/firebase/bogey.json"
 
 
 // const privateKey = process.env.FIREBASE_PRIVATE_KEY
 //   ? process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n').replace(/"/g, '')
 //   : undefined;
 
+    function initFirebaseAdmin() {
+    const apps = getApps();
 
-const initFirebaseAdmin = () => {
-    const apps = getApps()
-
-    if(!apps.length) {
-    try {
+    if (!apps.length) {
         initializeApp({
-            credential: cert(bogey as any)
+          credential: cert({
+            projectId: process.env.FIREBASE_PROJECT_ID,
+            clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+            // Replace newlines in the private key
+            privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
+          }),
         });
-        console.log("Firebase Admin initialized successfully");
-    } catch (error) {
-      console.error("Firebase Admin initialization error:", error);
-      throw error;
-    }
-    }
+      }
+
+
+    
     return {
         auth: getAuth(),
         db: getFirestore(),
