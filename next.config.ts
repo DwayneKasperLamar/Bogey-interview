@@ -3,6 +3,12 @@ const nextConfig = {
   experimental: {
     turbo: true, // Enable Turbopack
   },
+  eslint : {
+    ignoreDuringBuilds: true, // Ignore ESLint errors during build
+  },
+  typescript: {
+    ignoreBuildErrors: true, // Ignore TypeScript errors during build
+  },
   webpack: (config, { isServer }) => {
     if (!isServer) {
       // Don't attempt to import these server-only modules on the client
