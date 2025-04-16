@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    turbo: true, // Enable Turbopack
+  },
   webpack: (config, { isServer }) => {
     if (!isServer) {
       // Don't attempt to import these server-only modules on the client

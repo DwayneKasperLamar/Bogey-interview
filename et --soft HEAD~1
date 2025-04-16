@@ -1,0 +1,89 @@
+[33mcommit f5dc7cc59fd9a61eb6fe5ddfa882b0cd2ef2e116[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: dwayne <DwayneKasperLamar@gmail.com>
+Date:   Wed Apr 16 02:20:54 2025 +0100
+
+    fixed env
+
+[33mcommit 9584e26df3a617a5a5861f2dba3568d3c54a5e01[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: dwayne <DwayneKasperLamar@gmail.com>
+Date:   Mon Apr 14 23:48:30 2025 +0100
+
+    first commit
+
+[33mcommit 2954b0667f435a3cfe5977017eafc8bfc25fab12[m
+Author: dwayne <DwayneKasperLamar@gmail.com>
+Date:   Mon Apr 14 23:25:49 2025 +0100
+
+    env updated
+
+[33mcommit d4ccb06de6991e4df8467121dab3c48d5bb895c5[m
+Author: dwayne <DwayneKasperLamar@gmail.com>
+Date:   Mon Apr 14 13:07:58 2025 +0100
+
+    gitignore
+
+[33mcommit 43a8b206b26e077b6aef80adaad9a8c474f2a213[m
+Author: dwayne <DwayneKasperLamar@gmail.com>
+Date:   Mon Apr 14 13:00:29 2025 +0100
+
+    first commit
+
+[33mcommit b791ea4949f8f43b632738296137988a34c9cfbe[m
+Author: dwayne <DwayneKasperLamar@gmail.com>
+Date:   Mon Apr 14 12:35:35 2025 +0100
+
+    first commit
+
+[33mcommit 2d05edfd1b46e42c7bd613e74674fd552f383109[m
+Author: dwayne <DwayneKasperLamar@gmail.com>
+Date:   Mon Apr 14 12:23:55 2025 +0100
+
+    Remove service account credentials and add to gitignore
+
+[33mcommit ef2f65a17d7badbd00a7545af858e7c52057fedc[m
+Author: dwayne <DwayneKasperLamar@gmail.com>
+Date:   Mon Apr 14 12:15:37 2025 +0100
+
+    implemennt interview Generation
+
+[33mcommit 6288425c9649ea15451c4b2b87d98e026af7854d[m
+Author: dwayne <DwayneKasperLamar@gmail.com>
+Date:   Fri Apr 11 20:22:51 2025 +0100
+
+    setting up vapi
+
+[33mcommit 32ec625cedbf57cdf85097adedeaacf23ca2992e[m
+Author: dwayne <DwayneKasperLamar@gmail.com>
+Date:   Fri Apr 11 01:51:17 2025 +0100
+
+    interview Generation Ui
+
+[33mcommit 015a9c92ec07947dc73ddae85d0d3317a1798836[m
+Author: dwayne <DwayneKasperLamar@gmail.com>
+Date:   Mon Apr 7 02:43:19 2025 +0100
+
+    firebase auth
+
+[33mcommit cf82cd1fa375adbcc463e8eccade7f96711a1d08[m
+Author: dwayne <DwayneKasperLamar@gmail.com>
+Date:   Mon Mar 31 08:33:58 2025 +0100
+
+    firebase setup
+
+[33mcommit 54158e761f1e44c890938fb2ebe2fc1947256e5b[m
+Author: dwayne <DwayneKasperLamar@gmail.com>
+Date:   Tue Mar 25 15:59:39 2025 +0100
+
+    file n folder stucture, auth pages
+
+[33mcommit a5b79e7cf09747160e267d92ae43230d0c03cc4c[m
+Author: dwayne <DwayneKasperLamar@gmail.com>
+Date:   Sat Mar 22 06:46:48 2025 +0100
+
+    project setup
+
+[33mcommit 8e353e1a72a649e75b0fcc00c0f5d457a78988ec[m
+Author: dwayne <DwayneKasperLamar@gmail.com>
+Date:   Sat Mar 22 06:28:07 2025 +0100
+
+    Initial commit from Create Next App
