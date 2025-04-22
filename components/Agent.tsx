@@ -26,14 +26,14 @@ interface SavedMessage {
 const Agent = ({userName, userId, type}: AgentProps) => {
     const router = useRouter()
 
-    const [isSpeaking, setisSpeaking] = useState(false)
-    const [callStatus, setcallStatus] = useState<CallStatus>(CallStatus.INACTIVE)
+    const [isSpeaking, setIsSpeaking] = useState(false)
+    const [callStatus, setCallStatus] = useState<CallStatus>(CallStatus.INACTIVE)
     const [messages, setMessages] = useState<string[]>([])
-    const [isLoading, setisLoading] = useState<SavedMessage[]>([]);
+    const [isLoading, setIsLoading] = useState<SavedMessage[]>([]);
 
     useEffect(() => {
-        const OnCallStart = () => setcallStatus(CallStatus.ACTIVE)
-        const OnCallEnd = () => setcallStatus(CallStatus.FINISHED)
+        const OnCallStart = () => setCallStatus(CallStatus.ACTIVE)
+        const OnCallEnd = () => setCallStatus(CallStatus.FINISHED)
          
 
     const onMessage = (message:Message) => {
@@ -51,8 +51,8 @@ const Agent = ({userName, userId, type}: AgentProps) => {
         const OnError = (error: Error) => console.log('Error',error);
 
 
-        vapi.on('call:start', OnCallStart);
-        vapi.on('call:end', OnCallEnd);
+        vapi.on('call-start', OnCallStart);
+        vapi.on('call-end', OnCallEnd);
         vapi.on('message', onMessage);
         vapi.on('speech-start', OnSpeechStart);
         vapi.on('speech-end', OnSpeechEnd);
@@ -60,8 +60,8 @@ const Agent = ({userName, userId, type}: AgentProps) => {
 
 
             return () => {
-                vapi.off('call:start', OnCallStart);
-                vapi.off('call:end', OnCallEnd);
+                vapi.off('call-start', OnCallStart);
+                vapi.off('call-end', OnCallEnd);
                 vapi.off('message', onMessage);
                 vapi.off('speech-start', OnSpeechStart);
                 vapi.off('speech-end', OnSpeechEnd);
@@ -74,15 +74,14 @@ const Agent = ({userName, userId, type}: AgentProps) => {
     useEffect(() => {
         if(callStatus === CallStatus.FINISHED) router.push('/');
 
-    }, [messages, callStatus, type, userId ])
+    }, [messages, callStatus, type, userId, router ])
 
     const handleCall = async () => {
-        setCallStatus(CallSatus.CONNECTING);
-
+        setCallStatus(CallStatus.CONNECTING);
         await vapi.start(process.env.NEXT_PUBLIC_VAPI_WORKFLOW_ID!, {
             variableValues:{
                 username:userName,
-                userid: userID,
+                userid: userId,
             }
         })
     }
