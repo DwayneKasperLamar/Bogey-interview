@@ -28,8 +28,8 @@ const Agent = ({userName, userId, type}: AgentProps) => {
 
     const [isSpeaking, setIsSpeaking] = useState(false)
     const [callStatus, setCallStatus] = useState<CallStatus>(CallStatus.INACTIVE)
-    const [messages, setMessages] = useState<string[]>([])
-    const [isLoading, setIsLoading] = useState<SavedMessage[]>([]);
+    const [messages, setMessages] = useState<SavedMessage[]>([]);
+   
 
     useEffect(() => {
         const OnCallStart = () => setCallStatus(CallStatus.ACTIVE)
@@ -38,7 +38,7 @@ const Agent = ({userName, userId, type}: AgentProps) => {
 
     const onMessage = (message:Message) => {
         if(message.type === 'transcript' && message.transcriptType === "final") {
-            const newMessage = {role: messages.role, content: message.content}
+            const newMessage = {role: message.role, content: message.transcript}
 
             setMessages((prev) => [...prev, newMessage])
         }
