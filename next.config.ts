@@ -1,32 +1,22 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  experimental: {
-    turbo: true, // Enable Turbopack
-  },
-  eslint : {
-    ignoreDuringBuilds: true, // Ignore ESLint errors during build
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  /* config options here */
+  // images: {
+  //   remotePatterns: [
+  //     {
+  //       protocol: "https",
+  //       hostname: "ik.imagekit.io",
+  //       port: "",
+  //     },
+  //   ],
+  // },
+  eslint: {
+    ignoreDuringBuilds: true,
   },
   typescript: {
-    ignoreBuildErrors: true, // Ignore TypeScript errors during build
-  },
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      // Don't attempt to import these server-only modules on the client
-      config.resolve.fallback = {
-        ...config.resolve.fallback,
-        net: false,
-        tls: false,
-        fs: false,
-        child_process: false,
-        os: false,
-        https: false,
-        http: false,
-        stream: false,
-        crypto: false,
-      };
-    }
-    return config;
+    ignoreBuildErrors: true,
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
